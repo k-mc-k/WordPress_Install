@@ -1,9 +1,13 @@
-# WordPress-Install
+# WordPress-Ubuntu16.04-Install
 WordPress install with Ubuntu 16.04
 
-## Prerequisites
+## Getting Started
+These instructions will help you install and deploy WordPress using the command line in a few easy steps provided you have all the prerequisites.
+
+### Prerequisites
 Please ensure you have installed and configured Ubuntu 16.04 Server with a static ip address, ssh open and an internet connection prior to starting this WordPress Install tutorial
 
+### Installing
 ```
 sudo apt-get update
 ```
