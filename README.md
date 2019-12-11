@@ -81,7 +81,12 @@ sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 service apache2 restart
 ```
 
+To verify your IP address
+```
+ifconfig
+```
+
 ### Open your browser
-http://yourip/wordpress
+http://youripaddress/wordpress
 
 You will see the Wordpress install screen!
