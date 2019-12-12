@@ -88,10 +88,11 @@ sudo unzip -q latest.zip -d /var/www/html/
 
 ### Step 4: Configure the WordPress Directory 
 
+Set permissions for WordPress by entering the following commands:
+
 ```
 sudo chown -R www-data:www-data /var/www/html/wordpress
 ```
-
 ```
 sudo chmod -R 755 /var/www/html/wordpress
 ```
@@ -120,7 +121,7 @@ Now that you have completed configuring the server, you can complete the install
 http://youripaddress/wordpress
 ```
 
-If you are unsure of your IP address:
+If you are unsure of your IP address, type:
 
 ```
 ifconfig
