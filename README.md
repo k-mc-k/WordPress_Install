@@ -51,7 +51,7 @@ The next step is to create a separate MySQL user account that you will use to op
 ```
 mysql> CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
 ```
-After creating the user account, you must give that account accessnto the database:
+After creating the user account, you must give that account access to the database:
 
 ```
 mysql> GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
@@ -104,10 +104,13 @@ sudo chown -R www-data:www-data /var/www/html/wordpress
 sudo chmod -R 755 /var/www/html/wordpress
 ```
 
+Create the following directory:
+
 ```
 sudo mkdir -p /var/www/html/wordpress/wp-content/uploads
 ```
 
+Set permissions for the directory you just created:
 ```
 sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 ```
