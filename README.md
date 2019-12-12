@@ -8,16 +8,23 @@ These instructions will help you install and deploy WordPress using the command 
 Please ensure you have installed and configured Ubuntu 16.04 Server, ssh open and an internet connection prior to starting
 
 ### Installing
+
+Below is an important command that should be used when installing any software. It downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies:
+
 ```
 sudo apt-get update
 ```
 
-Test test test
+### Step 1: Install the LAMP stack (Linux, Apache, MySQL, PHP)
+
+In this guide, we are installing the above software through one command, however they can also be installed individually:
+
 ```
 sudo apt-get install lamp-server^
 ```
 
-Purple MySQL screen, create secure password
+You will be prompted by a purple MySQL screen to create a password for "root" user. Create secure password, confirm and ensure you remember it.
+
 ### Step 2: Create a MySQL Database and User for WordPress
 
 To get started, log into the MySQL root (administrative) account by using this command:
@@ -53,21 +60,33 @@ Exit out of MySQL by typing:
 mysql> exit
 ```
 
+### Step 3: Install WordPress
+
+Change into a writable directory:
+
 ```
 cd /tmp
 ```
+
+Then download the lastest version of WordPress by typing:
 
 ```
 sudo wget http://wordpress.org/latest.zip
 ```
 
+In order to unzip the WordPress file, you will need to install "unzip" if you haven't done so previously:
+
 ```
 sudo apt install unzip
 ```
 
+Unzip the file into your servers root directory, which is /var/www/html by default:
+
 ```
 sudo unzip -q latest.zip -d /var/www/html/
 ```
+
+### Step 4: Configure the WordPress Directory 
 
 ```
 sudo chown -R www-data:www-data /var/www/html/wordpress
@@ -85,16 +104,26 @@ sudo mkdir -p /var/www/html/wordpress/wp-content/uploads
 sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 ```
 
+### Step 5: Restart Apache 
+
+Restart Apache to implement the changes:
+
 ```
 service apache2 restart
 ```
 
-To verify your IP address
+### Step 6: Complete Installation through Web Interface
+
+Now that you have completed configuring the server, you can complete the installation through your browser. In your web browser, navigate to your IP address:
+
+```
+http://youripaddress/wordpress
+```
+
+If you are unsure of your IP address:
+
 ```
 ifconfig
 ```
 
-### Open your browser
-http://youripaddress/wordpress
-
-You will see the Wordpress install screen!
+You will see the Wordpress install screen! Next, you will be promted to seleced your language, select a name for your site and choose a user name. 
