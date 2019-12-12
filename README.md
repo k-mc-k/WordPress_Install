@@ -41,12 +41,12 @@ sudo mysql -u root -p
 ```
 You will be prompted for the password you set for the MySQL root account when you installed the LAMP stack.
 
-Next, you will create a database that WordPress can control. We will be using wordpress in this guide, however you can call this whatever you would like:
+Next, you will create a database that WordPress can control. We will be using *wordpress* in this guide, however you can call this whatever you would like:
 
 ```
 mysql> CREATE DATABASE wordpress;
 ```
-The next step is to create a separate MySQL user account that you will use to operate on the new database created in the previous step. For this guide, we will be using the the user name wordpressuser. Ensure you choose a strong password:
+The next step is to create a separate MySQL user account that you will use to operate on the new database created in the previous step. For this guide, we will be using the the user name *wordpressuser*. Ensure you choose a strong *password*:
 
 ```
 mysql> CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
