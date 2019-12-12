@@ -1,23 +1,30 @@
 # WordPress Install on Ubuntu 16.04
-WordPress install with Ubuntu 16.04
+Install WordPress on Ubuntu 16.04
 
 ## Getting Started
 These instructions will help you install and deploy WordPress using the command line in a few easy steps, provided you have all the prerequisites.
 
 ### Prerequisites
-Please ensure you have installed and configured Ubuntu 16.04 Server, ssh open and an internet connection prior to starting
+      - Installed and configured Ubuntu 16.04 Server
+      - SSH open 
 
-### Installing
+### Step 1: Connect to your server
 
-Below is an important command that should be used when installing any software. It downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies:
+With your credentials, connect to your Ubuntu server:
+
+```
+ssh user@ipaddress -p portnumber
+```
+
+### Step 2: Install the LAMP stack (Linux, Apache, MySQL, PHP)
+
+First ensure you are getting the newest versions of packages and their dependencies:
 
 ```
 sudo apt-get update
 ```
 
-### Step 1: Install the LAMP stack (Linux, Apache, MySQL, PHP)
-
-In this guide, we are installing the above software through one command, however they can also be installed individually:
+In this guide, we are installing the above software (Apache, MySQL, PHP) through one command, however they can also be installed individually:
 
 ```
 sudo apt-get install lamp-server^
@@ -25,7 +32,7 @@ sudo apt-get install lamp-server^
 
 You will be prompted by a purple MySQL screen to create a password for "root" user. Create secure password, confirm and ensure you remember it.
 
-### Step 2: Create a MySQL Database and User for WordPress
+### Step 3: Create a MySQL Database and User for WordPress
 
 To get started, log into the MySQL root (administrative) account by using this command:
 
@@ -60,7 +67,7 @@ Exit out of MySQL by typing:
 mysql> exit
 ```
 
-### Step 3: Install WordPress
+### Step 4: Install WordPress
 
 Change into a writable directory:
 
@@ -86,7 +93,7 @@ Unzip the file into your servers root directory, which is /var/www/html by defau
 sudo unzip -q latest.zip -d /var/www/html/
 ```
 
-### Step 4: Configure the WordPress Directory 
+### Step 5: Configure the WordPress Directory 
 
 Set permissions for WordPress by entering the following commands:
 
@@ -105,7 +112,7 @@ sudo mkdir -p /var/www/html/wordpress/wp-content/uploads
 sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 ```
 
-### Step 5: Restart Apache 
+### Step 6: Restart Apache 
 
 Restart Apache to implement the changes:
 
@@ -113,7 +120,7 @@ Restart Apache to implement the changes:
 service apache2 restart
 ```
 
-### Step 6: Complete Installation through Web Interface
+### Step 7: Complete Installation through Web Interface
 
 Now that you have completed configuring the server, you can complete the installation through your browser. In your web browser, navigate to your IP address:
 
