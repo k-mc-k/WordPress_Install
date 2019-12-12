@@ -137,4 +137,4 @@ If you are unsure of your IP address, type:
 ifconfig
 ```
 
-You will see the Wordpress install screen! Next, you will be promted to seleced your language, select a name for your site and choose a user name. 
+You will see the Wordpress install screen! Next, you will be promted to select your language, a name for your site and choose a user name. 
