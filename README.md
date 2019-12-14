@@ -44,32 +44,32 @@ You will be prompted for the password you set for the MySQL root account when yo
 Next, you will create a database that WordPress can control. We will be using *wordpress* in this guide, however you can call this whatever you would like:
 
 ```
-mysql> CREATE DATABASE wordpress;
+CREATE DATABASE wordpress;
 ```
 The next step is to create a separate MySQL user account that you will use to operate on the new database created in the previous step. For this guide, we will be using the the user name *wordpressuser*. Ensure you choose a strong *password*:
 
 ```
-mysql> CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
+CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
 ```
 After creating the user account, you must give that account access to the database:
 
 ```
-mysql> GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
+GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
 ```
 Now that you have a database and user account, you need to flush the privileges so the current instance of MySQL knows about the changes you just made:
 
 ```
-mysql> FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 ```
 Exit out of MySQL by typing:
 
 ```
-mysql> exit
+exit
 ```
 
 ### Step 4: Install WordPress
 
-Change into a writable directory:
+Change into a writable temporary directory:
 
 ```
 cd /tmp
