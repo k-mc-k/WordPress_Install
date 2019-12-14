@@ -34,12 +34,12 @@ You will be prompted by a purple MySQL screen to create a password for "root" us
 
 ### Step 3: Create a MySQL Database and User for WordPress
 
-To get started, log into the MySQL root (administrative) account by using this command:
+**It is very important that you remember the database name, user and password created in the next steps as they will be needed later on to complete the WordPress installation.** To get started, log into the MySQL root (administrative) account by using this command:
 
 ```
 sudo mysql -u root -p
 ```
-You will be prompted for the password you set for the MySQL root account when you installed the LAMP stack.
+You will be prompted to enter in the password you set for the MySQL root account when you installed the LAMP stack.
 
 Next, you will create a database that WordPress can control. We will be using *wordpress* in this guide, however you can call this whatever you would like:
 
@@ -78,7 +78,7 @@ cd /tmp
 Then download the lastest version of WordPress by typing:
 
 ```
-sudo wget http://wordpress.org/latest.zip
+wget http://wordpress.org/latest.zip
 ```
 
 In order to unzip the WordPress file, you will need to install "unzip" if you haven't done so previously:
@@ -120,7 +120,7 @@ sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 Restart Apache to implement the changes:
 
 ```
-service apache2 restart
+sudo service apache2 restart
 ```
 
 ### Step 7: Complete Installation through Web Interface
@@ -137,4 +137,4 @@ If you are unsure of your IP address, type:
 ifconfig
 ```
 
-You will see the Wordpress install screen! Next, you will be promted to select your language, a name for your site and choose a user name. 
+You will see the Wordpress install screen! Next, you will be promted to select your language, enter in your database details (the database name, user and password you set up in Step 3), then proceed to create a name for your site and choose log-in details. 
